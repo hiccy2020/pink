@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P224-tab栏切换制作</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            float: left;
+            padding: 0 20px;
+            height: 40px;
+            line-height: 40px;
+            list-style: none;
+        }
+
+        .current_red {
+            background: red;
+        }
+
+        .tab {
+            width: 1200px;
+            height: 300px;
+            margin: 100px auto;
+            background: pink;
+        }
+
+        .tab_list {
+            width: 1200px;
+            height: 40px;
+        }
+
+        .tab_cont div {
+            display: none;
+            width: 1200px;
+            height: 260px;
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current_red">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(500万+)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_cont">
+            <div style="display: block;">
+                商品名称：联想k01-A商品编号：100021539104商品毛重：135.00g商品产地：中国大陆适用尺寸：2.5英寸类别：移动硬盘盒接口：SATA接口</div>
+            <div>电脑、办公---外设产品---硬盘盒联想（Lenovo）k01-A</div>
+            <div>本商品质保周期为1年质保，在此时间范围内可提交维修申请，具体请以厂家服务为准。</div>
+            <div>东西收到了，整体感觉很不错，输出口是Type C的，接电脑的口是USB的，同时还配了USB转接Type
+                C的转接头，很赞。硬盘插入后，左右还有两颗螺丝从外面把硬盘与硬盘盒固定在一起，设计很合理。先给好评，待使用一段时间看看。</div>
+            <div>心中疑惑就问问买过此商品的同学吧~我要提问</div>
+        </div>
+    </div>
+    <script>
+        // 获取所有标签li列表
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+
+        // 给每个li添加点击事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('li_index', i)
+            lis[i].onclick = function () {
+                // 给当前点击的li添加class='current_red'
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = '';
+                }
+                this.className = 'current_red';
+
+                // 获取所有标签明细div，并设置display = 'none'
+                var tab_cont = document.querySelector('.tab_cont');
+                var conts = tab_cont.querySelectorAll('div');
+
+                for (var k = 0; k < conts.length; k++) {
+                    conts[k].style.display = 'none';
+                }
+                // 给当前点击的标签li对应的明细div设置display = 'block'
+                var li_index = this.getAttribute('li_index');
+                var cont = conts[li_index];
+                cont.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

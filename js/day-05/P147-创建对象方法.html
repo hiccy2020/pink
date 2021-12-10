@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P147-创建对象方法</title>
+    <script>
+        // 对象创建方法一：对象字面量{} 开始
+        // 注意：属性和方法使用冒号键值对赋值，且每个属性和方法使用逗号隔开。
+        var obj1 = {};  //创建一个空的对象
+        var obj2 = {
+            name: '陈长友',
+            age: 18,
+            sex: '男',
+            pc: function (pc1) {
+                console.log(pc1);
+            },
+        }
+
+        console.log(obj2.name, obj2.age, obj2.sex);
+        obj2.pc('计算机')
+        // 对象创建方法一：对象字面量{} 结束
+
+        // 对象创建方法二：利用new Object 开始
+        // 注意：必须使用new Object创建。属性和方法使用等号赋值，每个属性和方法使用分号隔开。
+        var newObj = new Object();
+        newObj.name = '刘德华';
+        newObj.age = 58;
+        newObj.sex = '男'
+        newObj.sing = function (song) {
+            console.log(song);
+        }
+
+        console.log(newObj.name, newObj.age, newObj.sex);
+        newObj.sing('冰雨');
+        // 对象创建方法二：利用new Object 结束
+
+        // 对象创建方法三：构造函数 开始
+        // 注意1：属性名和方法名前必须加this.，且为了和普通函数区分，构造函数名第一个字母用大写字母，使用等号赋值，每个属性和方法使用分号隔开。该方法类型于python里的类，生成后可生成多个类型属性和方法的对象，所以方法较常用。
+        // 注意2：创建对象时必须使用new关键字。
+        function Hero(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (attack1) {
+                console.log(attack1);
+            };
+        }
+        var lb = new Hero('廉颇', '力量型', 500);
+        console.log(lb.name, lb.type, lb.blood);
+        lb.attack('近战');
+        console.log(lb);
+        // 对象创建方法三：构造函数 结束
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

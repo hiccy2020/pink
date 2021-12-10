@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        .someDiv {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="someDiv"></div>
+    <script>
+        var div = document.querySelector('.someDiv');
+        var opacity = 1;
+
+        var fader = setInterval(function () {
+            if (opacity >= 0) {
+                opacity -= 0.1;
+                div.style.opacity = opacity;
+            } else {
+                clearInterval(fader);
+            }
+        }, 100)
+    </script>
+</body>
+
+</html>

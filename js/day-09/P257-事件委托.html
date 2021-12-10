@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P257-事件委托</title>
+</head>
+
+<body>
+    <ul>
+        <li>点我！</li>
+        <li>点我！</li>
+        <li>点我！</li>
+        <li>点我！</li>
+        <li>点我！</li>
+        <li>点我！</li>
+        <li>点我！</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul')
+        ul.addEventListener('click', fn)
+        function fn(e) {
+            var that = e.target;
+            for (var i = 0; i < ul.children.length; i++) {
+                this.children[i].style.backgroundColor = '';
+            }
+            that.style.backgroundColor = 'pink'
+            this.style.backgroundColor = '';  //清除仅点击到ul上样式。
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P217-百度换肤效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url() no-repeat top;
+        }
+
+        .box {
+            height: 125px;
+            width: 1000px;
+            margin: 100px auto;
+        }
+
+        .box ul li {
+            float: left;
+            /* 取消掉li前面的小圆点 */
+            list-style: none;
+        }
+
+        .box ul li img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var imgs = document.querySelector('.box').querySelectorAll('img');
+        console.log(imgs);
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                var srcs = this.src;
+                console.log(srcs);
+                document.body.style.backgroundImage = 'url(' + srcs + ')'
+            }
+        }
+    </script>
+</body>
+
+</html>

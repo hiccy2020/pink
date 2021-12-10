@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P263-模拟京东按键输入内容案例</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <script>
+        var select = document.querySelector('input');
+
+        document.addEventListener('keyup', function (e) {
+            if (e.keyCode === 83) {
+                select.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

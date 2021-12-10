@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P154-小结和作业</title>
+    <script>
+        // 创建电脑对象
+        function Pc(color, heft, brand, model) {
+            this.color = color;
+            this.heft = heft;
+            this.brand = brand;
+            this.model = model;
+            this.seeFilm = function (film) {
+                console.log(film);
+            }
+        }
+
+        var lenovo = new Pc('黑色', 10, '联想', 'i5-10400');
+        lenovo.seeFilm('教父');
+
+        for (var key in lenovo) {
+            console.log(key);
+            console.log(lenovo[key]);
+        }
+        // 创建按钮对象
+        function Button(width, high, backColor, click) {
+            this.width = width;
+            this.high = high;
+            this.backColor = backColor;
+            this.click = function (click) {
+                console.log(click);
+            }
+        }
+
+        var submit = new Button(100, 50, 'red')
+        submit.click('我可以提交！')
+        // 创建车对象
+        function Car(heft, color, brand) {
+            this.heft = heft;
+            this.color = color;
+            this.brand = brand;
+            this.manned = function (manned) {
+                console.log(manned);
+            }
+        }
+
+        var byd = new Car('2吨', '白色', '比亚迪');
+        byd.manned('我可以载人。')
+
+        for (k in byd) {
+            console.log(k);
+            console.log(byd[k]);
+        }
+
+        // 反转任意数组函数
+        function backArray(y_array) {
+            var new_array = [];
+            for (var i = 0; i < y_array.length; i++) {
+                new_array[i] = y_array[y_array.length - i - 1]
+            }
+            return new_array
+        }
+        var cs_array = [8, 1, 20, 13, 19, 4, 5, 100];
+        var cs_str = 'hello world!'
+        console.log(backArray(cs_array));
+        console.log(backArray(cs_str));
+
+        // 数组转字符串
+        function arrayToStr(y_array) {
+            var str = '';
+            for (i = 0; i < y_array.length; i++) {
+                str = str + y_array[i];
+            }
+            return str
+        }
+
+        var new_str = arrayToStr(backArray(cs_str));
+        console.log(new_str);
+
+        // 数字数组排序
+        function setSort(y_array) {
+            for (var i = 0; i < y_array.length; i++) {
+                for (var j = 0; j <= y_array.length - i - 1; j++) {
+                    var temp = 0;
+                    if (y_array[j] > y_array[j + 1]) {
+                        temp = y_array[j];
+                        y_array[j] = y_array[j + 1];
+                        y_array[j + 1] = temp;
+                    }
+                }
+            }
+            return y_array;
+        }
+
+        console.log(setSort(cs_array));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

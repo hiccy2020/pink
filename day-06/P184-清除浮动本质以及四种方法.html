@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P184-清除浮动本质以及四种方法</title>
+    <style>
+        /* 方法一：额外标签法 */
+        /* 在最后一个浮动元素末尾添加一个空的块级元素，通常用<br>或空<div>标签，然后设置样式 */
+        * {
+            clear: both;
+        }
+
+        /* 方法二：父级添加overflow属性 */
+        * {
+            overflow: hidden;
+        }
+
+        /* 方法三：父级添加after伪元素 */
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            /* IE6、7专有 */
+            *zoom: 1;
+        }
+
+        /* 方法四：父级添加双伪元素 */
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

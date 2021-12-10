@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: red;
+            height: 100%;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 48px;
+            width: 100%;
+            background: #00789e;
+        }
+
+        .header .logo,
+        .header .user {
+            height: 100%;
+        }
+
+        .header .logo {
+            position: relative;
+            float: left;
+            margin-left: 22px;
+            width: 300px;
+        }
+
+        .header .logo h2 {
+            position: absolute;
+            left: 65px;
+            bottom: 1px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .header .user {
+            float: right;
+            margin-right: 22px;
+            width: 150px;
+            font-size: 14px;
+            color: #fff;
+            line-height: 48px;
+            text-align: center;
+        }
+
+        .header .user p {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .main {
+            position: absolute;
+            top: 48px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background: pink;
+        }
+
+        .main .main_nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8%;
+            height: 100%;
+            font-size: 16px;
+            color: #fff;
+            background: #00789e;
+        }
+
+        .main .main_nav ul li {
+            padding: 5px 0;
+        }
+
+        .main .main_nav ul li:hover {
+            background: #4cb4df;
+        }
+
+        .main .main_work {
+            position: absolute;
+            top: 0;
+            left: 8%;
+            width: 92%;
+            height: 100%;
+            background: #fff;
+        }
+
+        .main .main_work .work_form {
+            height: 100px;
+            width: 100%;
+            background: pink;
+        }
+
+        .main .main_work .work_table {
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo2.png" alt="">
+            <h2>尚纬股份报表查询系统</h2>
+        </div>
+        <div class="user">
+            <p><span>头像</span><i>上午好！</i>陈长友</p>
+        </div>
+    </header>
+    <div class="main">
+        <div class="main_nav">
+            <ul>
+                <li>股份公司</li>
+                <li>乐山基地</li>
+                <li>安徽基地</li>
+            </ul>
+        </div>
+        <div class="main_work">
+            <div class="work_form">
+                <label for="">销售订单号</label><input type="text">
+            </div>
+            <div class="work_table">
+                <table>
+                    <tr>
+                        <th>销售订单号</th>
+                        <th>序号</th>
+                        <th>数量</th>
+                        <th>价格</th>
+                        <th>日期</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

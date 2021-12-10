@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P310-简单动画函数封装</title>
+    <style>
+        div {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: 100px;
+            width: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button class="start">开始</button>
+    <button class="stop">停止</button>
+    <script>
+        // 封装的animate简单动画函数
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                };
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 10)
+        }
+
+        // 封装的animate简单动画（循环）函数
+        var num = 1;
+
+        function animateLoop(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    num = -1;
+                };
+                if (obj.offsetLeft <= 0) {
+                    num = 1;
+                };
+                obj.style.left = obj.offsetLeft + num + 'px';
+            }, 10)
+        }
+        // 调用animate动画函数
+        var div = document.querySelector('div');
+        var btnStart = document.querySelector('.start');
+        var btnStop = document.querySelector('.stop');
+
+
+        btnStart.addEventListener('click', function () {
+            animateLoop(div, 1500);
+        });
+        btnStop.addEventListener('click', function () {
+            clearInterval(div.timer);
+        })
+    </script>
+</body>
+
+</html>

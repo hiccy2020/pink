@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P162-猜数字游戏</title>
+    <script>
+        // 要求用户猜1-50之间的一个数字，但是只有10次猜的机会。
+        function getRandomInclusive(min, max) {
+            min = Math.ceil(min);  //ceil返回大于一个数的最小整数，即一个数向上取整后的值。
+            max = Math.floor(max);  //floor返回小于一个数的最大整数，即一个数向下取整后的值。
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+
+        var random = getRandomInclusive(1, 50);
+
+        for (var i = 1; i <= 10; i++) {
+            num = prompt('猜数字大小游戏！\n共有10次机会，这是第' + i + '次！\n请输入你猜的数字：')
+            if (random > num) {
+                alert('你猜小了！')
+            } else if (random < num) {
+                alert('你猜大了！')
+            } else {
+                alert('恭喜你猜对了！游戏结束。')
+                break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

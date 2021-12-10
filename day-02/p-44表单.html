@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <!-- 表单有三部分组成：1、表单域；2、表单控件（表单元素）；3、提示信息。 -->
+    <!-- name和value属性是给后台使用；单选和多选框分区要有相同的name值 -->
+    <!-- label标签的for属性值和input标签的id值相同就使其绑定。 -->
+    <form action="" method="POST" name="">
+        <hr>
+        form表单常用控件：input,label标签: <br>
+        <label for="username">用户名：</label><input type="text" name="username" id="username" value="请输入用户名"> <br>
+        <label for="pwd">密码：</label><input type="password" name="pwd" id="pwd"> <br>
+        <!-- 单选按钮name值必须相同，才可以实现多选一 -->
+        单选：<label for="man">男</label>
+        <input type="radio" name="sex" id="man">
+        <label for="wman">女</label>
+        <input type="radio" name="sex" id="wman"> <br>
+        多选： 上班 <input type="checkbox" name="hobby" id="">
+        休息 <input type="checkbox" name="hobby" id="">
+        逛街 <input type="checkbox" name="hobby" id=""> <br>
+        下拉框：<input type="search" name="" id="" value="11"> <br>
+        文件：<input type="file" name="" id=""> <br>
+        <hr>
+        下拉多选框(需要继续学习下拉多选)：<br>
+        编程语言：<select name="" id="">
+            <option value="1">jave</option>
+            <option value="2">vb6.0</option>
+            <option value="3">c++</option>
+            <option value="4">php</option>
+            <option value="5" selected="selected">python</option>
+        </select> <br>
+        <hr>
+        <!-- textarea文本域 -->
+        情况说明：
+        <textarea name="" id="" cols="30" rows="10">请简要填写说明情况！</textarea>
+        <hr>
+        图片提交：<input type="image" src="images/sub-btn.jpg" alt=""> <br>
+        <input type="button" value="查询">
+    </form>
+</body>
+</html>

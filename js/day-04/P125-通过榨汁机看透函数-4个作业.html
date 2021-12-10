@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P125-通过榨汁机看透函数-4个作业</title>
+    <script>
+        // 作业1、任意两个数字和任意算术运算符
+        function setCounter(num1, operator, num2) {
+            var re = 0;
+            if (operator == '+') {
+                re = num1 + num2;
+            } else if (operator == '-') {
+                re = num1 - num2;
+            } else if (operator == '*') {
+                re = num1 * num2;
+            } else if (operator == '/') {
+                re = num1 / num2;
+            } else {
+                re = '请输入正确的运算符号！'
+            }
+            return re;
+        }
+        // alert(setCounter(15, '/', 3))
+        // 作业2、任意两个数的最大值
+        function setTwoMax(num1, num2) {
+            return num1 > num2 ? num1 : num2;
+        }
+        // alert(setTwoMax(11, 9))
+        // 作业3、任意三个数的最大值
+        function setThreeMax(num1, num2, num3) {
+            var max = num1 > num2 ? num1 : num2;
+            max = max > num3 ? max : num3;
+            return max;
+        }
+        // alert(setThreeMax(11, 10, 12))
+        // 作业4、判断是否是素数（又叫质数，只能被1和自身整除的数）
+        function setPrime(num) {
+            var coun = 0;
+            for (var i = 1; i <= num; i++)
+                if (num % i == 0) {
+                    coun++;
+                    if (coun > 2) {
+                        return (num + '这不是一个素数（质数）。')
+                    }
+                }
+            return (num + '这是一个素数（质数）。')
+        }
+        // var prime = setPrime(113);
+        // alert(prime)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

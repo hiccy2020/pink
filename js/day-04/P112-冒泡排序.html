@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P112-冒泡排序</title>
+    <script>
+        var arr = [2, 6, 1, 7, 4, 100, 23, 8, 5, 11];
+        for (var i = 0; i <= arr.length - 1; i++) {
+            for (var j = 0; j <= arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

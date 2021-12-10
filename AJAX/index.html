@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX-尚硅谷</title>
+    <style>
+        #result {
+            height: 200px;
+            width: 200px;
+            border: 1px solid #987;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击发送请求</button>
+    <div id="result"></div>
+    <script>
+        var btn = document.querySelector('button');
+        var result = document.getElementById('result');
+
+        btn.addEventListener('click', function () {
+            // 1.创建XMLHttpRequest小黄人对象
+            const xhr = new XMLHttpRequest();
+
+            // 网络异常提示
+            xhr.onerror = function () {
+                alert('网络异常！')
+            }
+
+            // 2.初始化设置请求类型和URL
+            // 2.1：URL请求地址加?t=' + Date.now()是加了一个时间戳，为了解决IE浏览器缓存问题
+            xhr.open('GET', 'http://127.0.0.1:8000/server?t=' + Date.now());
+
+            // 3.发送请求
+            xhr.send();
+
+            // 4.事件绑定：处理服务器端返回的结果
+            // 4.1状态码变化事件：on readystate change。初始为0，open为1，send为2，部分返回为3，全部返回为4。
+            xhr.onreadystatechange = function () {
+                // 4.2xhr对象的readyState属性的值：初始为0，open为1，send为2，部分返回为3，全部返回为4。
+                if (xhr.readyState === 4) {
+                    // 4.3服务器响应状态码status：2XX或304均为成功。
+                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+                        console.log(xhr.status);  //响应行的状态码
+                        console.log(xhr.statusText);  ////响应行的状态码字符串
+                        console.log(xhr.getAllResponseHeaders);  //响应头的所有内容
+                        console.log(xhr.response);  //响应体
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

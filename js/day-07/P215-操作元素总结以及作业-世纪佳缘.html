@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P215-操作元素总结以及作业-世纪佳缘</title>
+    <style>
+        .box {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        input {
+            /* 取消input输入时出现的边框 */
+            padding: 0 4px 0 10px;
+            height: 23px;
+            width: 120px;
+            outline: none;
+            font-size: 12px;
+            color: #ccc;
+            border: 1px solid #ccc;
+        }
+
+        #login {
+            height: 25px;
+            width: 70px;
+            color: #fff;
+            background: #008bb1;
+        }
+
+        .pink {
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" name="" id="uname" value="邮箱/ID/手机号">
+        <input type="text" name="" id="pwd" value="密码">
+        <input type="submit" value="登录" id="login">
+    </div>
+    <script>
+        var uname = document.querySelector('#uname');
+        var pwd = document.querySelector('#pwd');
+
+        uname.onfocus = function () {
+            uname.value == '邮箱/ID/手机号' ? uname.value = '' : uname.value;
+            uname.className = 'pink';
+        }
+        uname.onblur = function () {
+            uname.className = '';
+            uname.value == '' ? uname.value = '邮箱/ID/手机号' : uname.value;
+        }
+
+        pwd.onfocus = function () {
+            pwd.value == '密码' ? pwd.value = '' : pwd.value;
+            pwd.type = 'password';
+            pwd.className = 'pink';
+        }
+        pwd.onblur = function () {
+            pwd.className = '';
+            if (pwd.value == '') {
+                pwd.value = '密码';
+                pwd.type = 'text';
+            } else {
+                pwd.type = 'password';
+            }
+        }
+    </script>
+</body>
+
+</html>

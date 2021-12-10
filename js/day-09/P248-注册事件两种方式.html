@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P248-注册事件两种方式</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+
+    <script>
+        var btn = document.querySelectorAll('button');
+
+        // 传统注册事件
+        btn[0].onclick = function () {
+            alert('传统注册事件!')
+        }
+
+        // 方法监听注册事件
+        btn[1].addEventListener('click', function () {
+            alert('方法监听注册事件!')
+        })
+
+        // 两种注册事件的区别:
+        // 1、传统注册事件如同一个事件注册了多次，最后注册的事件会覆盖之前注册的事件。方法监听注册事件不会。
+        // 2、方法监听注册事件监听的事件类型前面不用加'on'，且是字符串类型。同一个事件可注册多次，按上下顺序依次执行。
+        // 3、addEventListener，在IE9以上浏览器才支持。
+    </script>
+</body>
+
+</html>

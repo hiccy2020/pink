@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P282-5秒钟之后跳转页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 100px;
+            width: 400px;
+            margin: 50px auto;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            background-color: #ccc;
+        }
+
+        .box span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector('.box');
+        var timer = 20;
+
+        // 页面有点击事件，倒计时从头开始。
+        document.onclick = function () {
+            timer = 20;
+        }
+        // 前执行一次倒计时函数，清空定时器开始的延时1秒空白。
+        countDown()
+
+        // 跳转定时器
+        setInterval(function () {
+            if (timer == -1) {
+                location.href = 'http://www.baidu.com';
+            } else {
+                countDown()
+            }
+        }, 1000)
+
+        // 倒计时函数
+        function countDown() {
+            if (timer < 10) {
+                timer = '0' + timer;
+            }
+            box.innerHTML = '注意：<span>' + timer + '</span> 秒内没有操作页面将跳转到首页！';
+            timer--;
+        }
+    </script>
+</body>
+
+</html>

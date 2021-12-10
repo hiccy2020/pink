@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P150-构造函数创建对象-创建英雄</title>
+    <script>
+        // 对象创建方法三：构造函数 开始
+        function Hero(uname, type, blood) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (attack) {
+                console.log(attack);
+            }
+        };
+        // 创建构造函数对象要使用new关键字☆☆☆☆☆
+        lb = new Hero('廉颇', '力量型', 500);
+        lb.attack('近战');
+        hr = new Hero('后羿', '射手型', 100)
+        // hr.attack('远程');
+        console.log(lb.name, lb.type, lb.blood);
+        // 对象创建方法三：构造函数 结束
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

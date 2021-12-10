@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P238-动态生成表格-创建学生数据</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 1200px;
+            height: 1000px;
+            margin: 100px auto;
+            border-top: 1px solid pink;
+            background: pink;
+        }
+
+        table {
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            /* 表格边框合并 */
+            border-collapse: collapse;
+        }
+
+        thead tr {
+            background: #ccc;
+        }
+
+        tr {
+            height: 40px;
+        }
+
+        th,
+        td {
+            width: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table cellspacing='0'>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>科目</th>
+                    <th>成绩</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        var datas = [{
+            name: '陈长友',
+            subject: 'JavaScript',
+            score: 100
+        },
+        {
+            name: '李广文',
+            subject: 'C++',
+            score: 100
+        },
+        {
+            name: '尹世明',
+            subject: 'Python',
+            score: 100
+        }]
+        var tbody = document.querySelector('tbody');
+
+        // 创建数据行
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+
+            // 创建数据行内单元格
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tbody.children[i].appendChild(td);
+            }
+
+            // 创建每行的删除单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+
+        var a_del = tbody.getElementsByTagName('a');
+        for (var i = 0; i < a_del.length; i++) {
+            a_del[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

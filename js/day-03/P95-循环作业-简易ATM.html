@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P95-循环作业-简易ATM</title>
+    <script>
+        var bal = 100;
+        while (true) {
+            var num = parseFloat(prompt('请输入您需要的服务（1.存钱；2.取钱；3.显示余额；4.退出）：'));
+            if (num == 1) {
+                money = parseFloat(prompt('请输入您存钱的金额：'));
+                bal += money;
+            } else if (num == 2) {
+                money = parseFloat(prompt('请输入您取钱的金额：'));
+                bal -= money;
+            } else if (num == 4) {
+                alert('欢迎使用本银行ATM机服务！');
+                break;
+            }
+
+            alert('您的余款是：' + bal + '元');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

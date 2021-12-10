@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P234-简单版发布留言案例</title>
+    <style>
+        .box {
+            width: 1200px;
+            margin: 100px auto;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="text" cols="30" rows="10"></textarea>
+        <button class="btn">提交</button>
+        <ul class="message"></ul>
+    </div>
+
+    <script>
+        var message = document.querySelector('.message');
+        var btn = document.querySelector('.btn');
+        var text = document.querySelector('#text');
+
+        btn.onclick = function () {
+            if (text.value) {
+                var li = document.createElement('li');
+                li.innerHTML = text.value;
+                // message.appendChild(li);
+                message.insertBefore(li, message.children[0]);
+                text.value = ''
+            } else {
+                alert('你还没留言呢！');
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f6f6f6;
+    font-size: 12px;
+    font-family: simsun;
+}
+a{
+    text-decoration: none;
+    color: #474747;
+}
+li{
+    list-style: none;
+}
+strong{
+    font-size: 14px;
+}
+input{
+    outline: none;
+}
+.header{
+    width: 100%;
+    height: 38px;
+    background: #ffffff;
+}
+.w{
+    width: 1000px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+/* header开始 */
+.header .nav li{
+    float: left;
+    padding: 0 12px;
+    line-height: 38px;
+}
+.header .nav .welcome-login{
+    float: right;
+    line-height: 38px;
+}
+/* header结束 */
+
+/* 广告ad开始 */
+.ad{
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+}
+/* 广告ad结束 */
+
+.searchbar_wrap{
+    margin-top: 15px;
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    background: #ffffff;
+    overflow: hidden;
+}
+.searchbar_wrap .icon_logo{
+    margin: 12px 20px;
+    width: 250px;
+    height: 50px;
+    background-image: url(img/a7699963a4.png);
+    background-position: 0 -95px;
+    /* background-color: #e6e6e6; */
+}
+.searchbar_wrap .search_input li{
+    float: left;
+    padding: 15px;
+    padding-bottom: 5px;
+}
+.searchbar_wrap .search_input input{
+    width: 290px;
+    height: 32px;
+    border: 2px solid #4394fe;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+.searchbar_wrap .search_input .search_a{
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #4394fe;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+.searchbar_wrap .search_input a{
+    color:#fff;
+    font-size: 16px;
+}
+.searchbar_wrap .search_hot{
+    width: 320px;
+    background-color: pink;
+}
+.searchbar_wrap .search_hot li{
+    float: left;
+    padding: 5px;
+    width: 60px;
+}

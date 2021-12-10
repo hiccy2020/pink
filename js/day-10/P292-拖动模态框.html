@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P292-拖动模态框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box p {
+            width: 100px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .login {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 500px;
+            height: 500px;
+            /* margin: 100px auto; */
+            background-color: pink;
+        }
+
+        .login span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>点击登录</p>
+    </div>
+    <div class="login">
+        <span>X</span>
+    </div>
+    <script>
+        var box = document.querySelector('p');
+        var login = document.querySelector('.login');
+        var close = login.querySelector('span');
+
+        box.addEventListener('click', function () {
+            document.body.style.backgroundColor = '#ccc'
+            login.style.display = 'block';
+            // window.innerWidth，获取浏览器宽度，window.可省略，不含px。
+            login.style.top = '100px';
+            login.style.left = window.innerWidth / 2 - 250 + 'px'
+        })
+
+        close.addEventListener('mouseover', function () {
+            close.style.backgroundColor = 'red';
+        })
+        close.addEventListener('mouseout', function () {
+            close.style.backgroundColor = '#ccc';
+        })
+        close.addEventListener('click', function () {
+            login.style.display = 'none';
+            document.body.style.backgroundColor = ''
+        })
+
+        document.addEventListener('mousemove', function (e) {
+            login.addEventListener('mousedown', function () {
+                // 按下时login盒子位置
+                var down_x = login.offsetLeft;
+                var down_y = login.offsetTop;
+                // 按下时鼠标位置
+                var page_x = e.pageX;
+                var page_y = e.pageY;
+
+                // 鼠标和login盒子位置距离差：page_x - down_x
+                var x = page_x - down_x;
+                var y = page_y - down_y;
+
+                login.addEventListener('mousemove', move)
+
+                function move(e) {
+                    this.style.cursor = 'move';
+                    if (e.pageX < x) {
+                        login.style.left = 0;
+                    } else {
+                        login.style.left = e.pageX - x + 'px';
+                    }
+                    if (e.pageY < y) {
+                        login.style.top = 0;
+                    } else {
+                        login.style.top = e.pageY - y + 'px';
+                    }
+                };
+
+                login.addEventListener('mouseup', function () {
+                    login.removeEventListener('mousemove', move);
+                    this.style.cursor = 'default';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

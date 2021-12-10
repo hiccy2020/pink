@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P215-操作元素总结以及作业-背景变色</title>
+    <style>
+        button {
+            background: #000;
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点我变页面背景颜色</button>
+    <script>
+        function getRandomInclusive(min, max) {
+            min = Math.ceil(min);  //ceil返回大于一个数的最小整数，即一个数向上取整后的值。
+            max = Math.floor(max);  //floor返回小于一个数的最大整数，即一个数向下取整后的值。
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        var btn = document.querySelector('button');
+        var body = document.body;
+        btn.onclick = function () {
+            var a1 = getRandomInclusive(0, 15).toString(16);
+            var a2 = getRandomInclusive(0, 15).toString(16);
+            var a3 = getRandomInclusive(0, 15).toString(16);
+            var a4 = getRandomInclusive(0, 15).toString(16);
+            var a5 = getRandomInclusive(0, 15).toString(16);
+            var a6 = getRandomInclusive(0, 15).toString(16);
+            var color = '#' + a1 + a2 + a3 + a4 + a5 + a6;
+            body.style.background = color;
+        }
+    </script>
+</body>
+
+</html>

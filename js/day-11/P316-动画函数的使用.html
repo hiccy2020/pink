@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P316-动画函数的使用</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .sliderbar {
+            position: relative;
+            margin: 50px auto;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: pink;
+        }
+
+        .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 40px;
+            background: pink;
+            /* background: purple; */
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con">从右向左出</div>
+    </div>
+    <script>
+        var sliderbar = document.querySelector('.sliderbar');
+        var con = document.querySelector('.con');
+
+        sliderbar.addEventListener('mouseenter', function () {
+            animate(con, -160, function () {
+                sliderbar.children[0].innerHTML = '→';
+                con.innerHTML = '从左向右回';
+                // sliderbar.children[1].innerHTML = '从左向右回';
+            })
+        });
+
+        sliderbar.addEventListener('mouseleave', function () {
+            animate(con, 0, function () {
+                sliderbar.children[0].innerHTML = '←';
+                con.innerHTML = '从右向左出';
+            })
+        })
+    </script>
+</body>
+
+</html>

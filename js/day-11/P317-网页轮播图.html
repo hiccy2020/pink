@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P317-网页轮播图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .focus {
+            position: relative;
+            margin: 0 auto;
+            /* overflow: hidden:溢出超出DIV边框宽度高度的内容自动隐藏 */
+            overflow: hidden;
+            width: 721px;
+            height: 455px;
+        }
+
+        .focus ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6000%;
+        }
+
+        .arrow-l,
+        .arrow-r {
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 24px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 30px;
+            line-height: 40px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .arrow-l {
+            left: 5px;
+        }
+
+        .arrow-r {
+            right: 5px;
+        }
+
+        .focus ul li {
+            float: left;
+        }
+
+        .circle {
+            position: absolute;
+            bottom: 10px;
+            left: 335px;
+        }
+
+        .circle li {
+            float: left;
+            margin: 0 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .circle .current {
+            background-color: red;
+        }
+
+        .w {
+            margin: 100px auto;
+            width: 1200px;
+            background: pink;
+        }
+    </style>
+    <script src="js/animate.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="w">
+        <div class="main">
+            <div class="focus fl">
+                <a href="javascript:;" class="arrow-l"><span>&lt</span></a>
+                <a href="javascript:;" class="arrow-r"><span>&gt</span></a>
+                <ul>
+                    <li>
+                        <a href="#"><img src="upload/focus.jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus1.jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus2.jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="upload/focus3.jpg" alt=""></a>
+                    </li>
+                </ul>
+                <ol class="circle">
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P161-Math随机数方法</title>
+    <script>
+        // 得到一个0-1之前的随机数。
+        console.log(Math.random());
+
+        // 得到一个两数之间的随机整数（不小于min，且小于max）
+        function getRandom(min, max) {
+            min = Math.ceil(min);  //ceil返回大于一个数的最小整数，即一个数向上取整后的值。
+            max = Math.floor(max);  //floor返回小于一个数的最大整数，即一个数向下取整后的值。
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        // 得到一个两数之间的随机整数（含min、max这两个整数）
+        function getRandomInclusive(min, max) {
+            min = Math.ceil(min);  //ceil返回大于一个数的最小整数，即一个数向上取整后的值。
+            max = Math.floor(max);  //floor返回小于一个数的最大整数，即一个数向下取整后的值。
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

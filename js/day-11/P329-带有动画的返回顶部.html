@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P329-带有动画的返回顶部</title>
+    <script src="js/backTopAnimate.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            margin: 0 auto;
+            width: 1200px;
+            text-align: center;
+        }
+
+        .box {
+            margin: 0 auto;
+            width: 1200px;
+            height: 5000px;
+            background: pink;
+        }
+
+        .back {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>顶部</h2>
+    <div class="box"></div>
+    <div class="back">返回顶部</div>
+
+    <script>
+        var back = document.querySelector('.back');
+        back.addEventListener('click', function () {
+            animate(window, 0);
+        })
+    </script>
+</body>
+
+</html>

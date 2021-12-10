@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+
+<body>
+    <script>
+        var x = '我是全局变量X'
+        var obj = {
+            x: '我是对象obj里的X',
+            y: function () {
+                console.log(this.x);
+            },
+        };
+        // 有括号：立即执行obj.y方法并返回结果。
+        obj.y();
+        // 无括号：obj.y方法本身。这里指：
+        // function () {
+        //     console.log(this.x);
+        // }
+        setTimeout(obj.y, 1000);
+        setTimeout(function () {
+            obj.y();
+        }, 2000)
+
+
+    </script>
+</body>
+
+</html>

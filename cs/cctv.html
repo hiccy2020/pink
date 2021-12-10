@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cctv</title>
+    <link rel="stylesheet" href="../ahsw/css/base.css">
+    <link rel="stylesheet" href="../ahsw/css/icon_font_style.css">
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('../fonts/icomoon.eot?tomleg');
+            src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+                url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+                url('../fonts/icomoon.woff?tomleg') format('woff'),
+                url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        .icon_font {
+            font-family: 'icomoon';
+        }
+
+        .w {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            width: 100%;
+            height: 40px;
+            background: url(img/up_backgroup.jpg);
+        }
+
+        .header_nav ul {
+            float: left;
+            width: 600px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .header_nav ul li {
+            float: left;
+            padding: 0 10px;
+        }
+
+        .header_user {
+            float: right;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .header_user a {
+            padding: 0 10px;
+        }
+
+        .cctvTitle {
+            width: 100%;
+            height: 200px;
+            background: url(img/cctv.png) no-repeat;
+        }
+
+        .title_icon {
+            height: 50px;
+            line-height: 35px;
+            /* padding-top: 15px; */
+        }
+
+        .title_icon h1 {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .title_icon .live {
+            float: left;
+            margin: 15px 0 0 10px;
+            width: 400px;
+        }
+
+        .title_icon .cctv {
+            float: right;
+            margin: 15px 10px 0 0;
+            width: 400px;
+            text-align: right;
+        }
+
+        .title_sub {
+            height: 150px;
+            font-size: 50px;
+            color: #fff;
+            line-height: 150px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .channel {
+            width: 100%;
+            height: 50px;
+            background-color: #ea1919;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .channel a {
+            padding: 0 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main {
+            width: 100%;
+            height: 645px;
+            padding: 40px 0;
+        }
+
+        .footer {
+            height: 144px;
+            color: #fff;
+            text-align: center;
+            background: #ea1919;
+        }
+
+        .footer_link ul {
+            height: 50px;
+
+            line-height: 50px;
+        }
+
+        .footer_link ul li {
+            /* float: left; */
+            /* 不浮动，设置行元素后水平居中 */
+            display: inline;
+        }
+
+        .footer_link ul li a {
+            padding: 0 5px;
+            color: #fff;
+        }
+
+        .footer>.w>p {
+            padding: 5px;
+        }
+
+        .footer_icp,
+        .footer_licence {
+            padding: 5px;
+        }
+
+        .footer_icp a,
+        .footer_icp span {
+            color: #fff;
+            padding: 0 5px;
+        }
+
+        .footer_licence a,
+        .footer_licence span {
+            color: #fff;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1、顶部header部分开始 -->
+    <div class="header">
+        <div class="w">
+            <!-- 1.1、header导航栏部分开始 -->
+            <div class="header_nav">
+                <ul>
+                    <li><a href="#">央视网首页</a></li>
+                    <li><a href="#">新闻</a></li>
+                    <li><a href="#">视频</a></li>
+                    <li><a href="#">经济</a></li>
+                    <li><a href="#">体育</a></li>
+                    <li><a href="#">军事</a></li>
+                    <!-- 方法一写法，span标签内写上字体，不需要导入字体css文件 -->
+                    <!-- <li><a href="#">更多<span class="icon_font"></span></a></li> -->
+                    <!-- 方法二写法，但需要导入字体css文件 -->
+                    <li><a href="#">更多<span class="icon-cheveron-down"></span></a></li>
+                    <li><a href="#">节目官网</a></li>
+                    <li><a href="#">直播</a></li>
+                    <li><a href="#">栏目</a></li>
+                    <li><a href="#">频道大全<span class="icon_font"></span></a></li>
+                </ul>
+            </div>
+            <!-- 1.1、header导航栏部分结束 -->
+            <!-- 1.2、header用户部分开始 -->
+            <div class="header_user">
+                <a href="">登录</a>
+                <span>|</span>
+                <a href="">帮助</a>
+                <span>|</span>
+                <a href="">应用<span class="icon-cheveron-down"></span></a>
+            </div>
+            <!-- 1.2、header用户部分结束 -->
+        </div>
+    </div>
+    <!-- 1、顶部header部分结束 -->
+    <!-- 2、标题cctv_title部分开始 -->
+    <div class="cctvTitle">
+        <div class="w">
+            <!-- 2.1、标志部分开始 -->
+            <div class="title_icon">
+                <div class="live">
+                    <h1>央视网</h1>
+                </div>
+                <div class="cctv">
+                    <h1>CCTV</h1>
+                </div>
+            </div>
+            <!-- 2.1、标志部分结束 -->
+            <!-- 2.2title_channel标题开始 -->
+            <div class="title_sub">
+                <p>纪念辛亥革命110周年大会</p>
+            </div>
+            <!-- 2.2title_channel标题结束 -->
+        </div>
+    </div>
+    <!-- 标题cctv_title部分结束 -->
+    <!-- 3、channel频道部分开始 -->
+    <div class="channel">
+        <div class="w">
+            <a href="#">新闻频道</a>
+            <span>|</span>
+            <a href="#">专题频道</a>
+            <span>|</span>
+            <a href="#">央视网</a>
+        </div>
+    </div>
+    <!-- 3、channel频道部分结束 -->
+    <!-- 4、main主要部分开始 -->
+    <div class="main">
+        <div class="w">
+            <img src="img/shiping.png" alt="">
+        </div>
+    </div>
+    <!-- 4、main主要部分结束 -->
+    <!-- 4、footer页脚部分开始 -->
+    <div class="footer">
+        <div class="w">
+            <!-- 4.1、链接 -->
+            <div class="footer_link">
+                <ul>
+                    <li><a href="#">中央电视台网站</a><span>|</span></li>
+                    <li><a href="#">关于CCTV.com</a><span>|</span></li>
+                    <li><a href="#">人才招聘</a><span>|</span></li>
+                    <li><a href="#">网站声明</a><span>|</span></li>
+                    <li><a href="#">法律顾问</a><span>|</span></li>
+                    <li><a href="#">CCTV广告中心</a><span>|</span></li>
+                    <li><a href="#">帮助中心</a><span>|</span></li>
+                </ul>
+            </div>
+            <p>中央广播电视总台&nbsp;&nbsp;央视网&nbsp;&nbsp;版权所有</p>
+            <div class="footer_icp"><a href="#">违法和不良信息举报电话:010-88047123</a><a href="#">京ICP证060535号</a><a
+                    href="#">京公网安备
+                    11000002000018号</a><span>京网文[2014]0383-083号</span>
+            </div>
+            <div class="footer_licence">
+                <span>网上传播视听节目许可证号&nbsp;&nbsp;0102002</span><span>新出网证（京）字098号</span><a href="#">中国互联网视听节目服务自律公约</a>
+            </div>
+        </div>
+    </div>
+    <!-- footer页脚部分结束 -->
+</body>
+
+</html>

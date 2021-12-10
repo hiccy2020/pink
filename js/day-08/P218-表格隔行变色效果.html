@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P218-表格隔行变色效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 1200px;
+            margin: 100px auto;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid #bbd4e8;
+        }
+
+        tr {
+            height: 40px;
+        }
+
+        thead {
+            background: #ebf6ff;
+        }
+
+        .backcolor {
+            background-color: #def0f6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>代码</th>
+                    <th>名称</th>
+                    <th>相关</th>
+                    <th>上榜次数</th>
+                    <th>龙虎榜净买额(万)</th>
+                    <th>龙虎榜买入额(万)</th>
+                    <th>龙虎榜卖出额(万)</th>
+                    <th>龙虎榜总成交额(万)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>001208</td>
+                    <td>华菱线缆</td>
+                    <td>详情 数据 股吧</td>
+                    <td>41</td>
+                    <td>-17123.97</td>
+                    <td>319993.69</td>
+                    <td>337117.66</td>
+                    <td>657111.35</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>605011</td>
+                    <td>杭州热电</td>
+                    <td>详情 数据 股吧</td>
+                    <td>36</td>
+                    <td>3009.25</td>
+                    <td>104865.16</td>
+                    <td>101855.91</td>
+                    <td>206721.08</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>300362</td>
+                    <td>天翔退</td>
+                    <td>详情 数据 股吧</td>
+                    <td>30</td>
+                    <td>1849.41</td>
+                    <td>12422.72</td>
+                    <td>10573.31</td>
+                    <td>22996.03</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>300809</td>
+                    <td>华辰装备</td>
+                    <td>详情 数据 股吧</td>
+                    <td>23</td>
+                    <td>20440.86</td>
+                    <td>825729.76</td>
+                    <td>805288.90</td>
+                    <td>1631018.66</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>002455</td>
+                    <td>百川股份</td>
+                    <td>详情 数据 股吧</td>
+                    <td>22</td>
+                    <td>12072.94</td>
+                    <td>519830.47</td>
+                    <td>507757.53</td>
+                    <td>1027587.99</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // tr行效果开始
+        var tbody_tr = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < tbody_tr.length; i++) {
+            tbody_tr[i].onmouseover = function () {
+                for (var j = 0; j < tbody_tr.length; j++) {
+                    tbody_tr[j].className = '';
+                }
+                this.className = 'backcolor';
+            }
+        }
+
+        for (var i = 0; i < tbody_tr.length; i++) {
+            tbody_tr[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+        // tr行效果结束
+
+        // td列效果开始
+        for (var i = 0; i < tbody_tr.length; i++) {
+            // var tbody_td = tbody_tr[i].querySelectorAll('td');
+            var tbody_td = tbody_tr[i].querySelector('td');
+            tbody_td.onmouseover = function () {
+                console.log(this);
+            }
+        }
+    </script>
+</body>
+
+</html>

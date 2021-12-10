@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- The website is designed and developed by Chen Changyou of Sunway Co., Ltd. Email: hiccy@163.com -->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P274-倒计时效果</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 220px;
+            height: 70px;
+            margin: 50px auto;
+            background-color: pink;
+        }
+
+        .box span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="hour"></span>
+        <span class="minutes"></span>
+        <span class="seconds"></span>
+    </div>
+    <script>
+        var hours = document.querySelector('.hour');
+        var minutes = document.querySelector('.minutes');
+        var seconds = document.querySelector('.seconds');
+
+        var inputTime = +new Date('2021-10-28 11:25:00');
+        // 先调用一次函数，使页面初始化就显示倒计时，再执行循环倒计时
+        countDown();
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+
+            // 总秒数除以60等于总分钟，再除以60向下取整后等于小时。
+            var h = parseInt(times / 60 / 60) < 10 ? '0' + parseInt(times / 60 / 60) : parseInt(times / 60 / 60);
+            hours.innerHTML = h;
+
+            // 总秒数除以60等于总分钟，再余60向下取整后等于分钟
+            var m = parseInt(times / 60 % 60) >= 10 ? parseInt(times / 60 % 60) : '0' + parseInt(times / 60 % 60);
+            minutes.innerHTML = m;
+
+            // 总秒数余60向下取整后等于秒
+            var s = parseInt(times % 60) >= 10 ? parseInt(times % 60) : '0' + parseInt(times % 60);
+            seconds.innerHTML = s;
+        }
+
+    </script>
+</body>
+
+</html>
